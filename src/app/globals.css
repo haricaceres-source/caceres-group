@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-navy: #0b1f3a;
+  --color-navy-deep: #071525;
+  --color-navy-soft: #132a4a;
+  --color-gold: #c9a227;
+  --color-gold-soft: #d4b44a;
+  --color-gold-muted: #a8861f;
+  --color-surface: #f4f6f8;
+  --color-surface-elevated: #ffffff;
+  --color-ink: #0b1f3a;
+  --color-ink-muted: #5b6b7c;
+  --color-line: #e2e8f0;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b1f3a;
+  --muted: #5b6b7c;
+  --surface: #f4f6f8;
+  --surface-elevated: #ffffff;
+  --line: #e2e8f0;
+  --navy: #0b1f3a;
+  --gold: #c9a227;
+}
+
+.dark {
+  --background: #071525;
+  --foreground: #f3f6f9;
+  --muted: #9aa8b8;
+  --surface: #0b1f3a;
+  --surface-elevated: #102744;
+  --line: #1e3554;
+  --navy: #0b1f3a;
+  --gold: #c9a227;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--gold) 35%, transparent);
+  color: var(--foreground);
+}
+
+.page-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 100;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform-origin: left;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--gold) 70%, transparent),
+    transparent
+  );
+}
+
+.map-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--gold) 18%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--gold) 18%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.glass {
+  background: color-mix(in oklab, var(--surface-elevated) 88%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(11, 31, 58, 0.45);
+  backdrop-filter: blur(14px);
+}
+
+/* Subtle Venezuela outline watermark */
+.venezuela-watermark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 220' fill='none'%3E%3Cpath d='M95 18c22 2 48 14 62 34 10 14 16 32 12 50-3 14-12 24-22 34-8 8-14 18-12 30 2 12 12 20 10 34-2 12-14 22-28 24-18 3-34-8-48-18-12-8-28-12-38-24-12-14-14-34-8-50 4-12 14-20 18-32 6-16 4-34 12-48 8-14 26-22 42-34z' stroke='%23C9A227' stroke-opacity='0.18' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8% center;
+  background-size: min(38vw, 360px);
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade {
+  animation: hero-fade-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade {
+    animation: none;
+  }
+}

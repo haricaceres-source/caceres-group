@@ -1,0 +1,75 @@
+import { cn } from "@/lib/utils";
+
+type SectionProps = {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  children: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+  tone?: "default" | "muted" | "navy";
+};
+
+export function Section({
+  id,
+  eyebrow,
+  title,
+  description,
+  children,
+  className,
+  containerClassName,
+  tone = "default",
+}: SectionProps) {
+  return (
+    <section
+      id={id}
+      className={cn(
+        "py-20 md:py-28",
+        tone === "muted" && "bg-[var(--surface)]",
+        tone === "navy" && "bg-navy text-white",
+        className,
+      )}
+    >
+      <div className={cn("mx-auto max-w-6xl px-6", containerClassName)}>
+        {(eyebrow || title || description) && (
+          <div className="mb-12 max-w-3xl md:mb-16">
+            {eyebrow && (
+              <p
+                className={cn(
+                  "mb-3 text-xs font-medium uppercase tracking-[0.22em]",
+                  tone === "navy" ? "text-gold" : "text-gold-muted dark:text-gold",
+                )}
+              >
+                {eyebrow}
+              </p>
+            )}
+            {title && (
+              <h2
+                className={cn(
+                  "text-3xl font-semibold tracking-tight md:text-4xl",
+                  tone === "navy" ? "text-white" : "text-navy dark:text-white",
+                )}
+              >
+                {title}
+              </h2>
+            )}
+            {description && (
+              <p
+                className={cn(
+                  "mt-4 text-base leading-relaxed md:text-lg",
+                  tone === "navy"
+                    ? "text-white/75"
+                    : "text-[var(--muted)]",
+                )}
+              >
+                {description}
+              </p>
+            )}
+          </div>
+        )}
+        {children}
+      </div>
+    </section>
+  );
+}
