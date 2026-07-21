@@ -1,7 +1,10 @@
 export const SITE = {
   name: "Grupos Caceres",
+  alternateName: "Caceres Group",
   tagline: "Strategic consulting and market-entry advisory for Venezuela",
-  url: "https://gruposcaceres.com",
+  description:
+    "Grupos Caceres (also known as Caceres Group) provides Venezuela market-entry consulting, expansion advisory, local partnerships, and regulatory guidance for international companies.",
+  url: "https://caceres-group.vercel.app",
   email: "gruposcaceres@gmail.com",
   phone: "+1 (954) 740-0389",
   phoneHref: "+19547400389",
