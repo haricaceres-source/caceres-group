@@ -22,9 +22,9 @@ export function ThemeToggle({ inverted = false }: { inverted?: boolean }) {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center border transition-colors hover:border-gold hover:text-gold",
+        "inline-flex h-9 w-9 items-center justify-center border transition-colors hover:border-navy/30 dark:hover:border-white/30",
         inverted
-          ? "border-white/35 text-white"
+          ? "border-white/30 text-white hover:border-white/50"
           : "border-[var(--line)] text-navy dark:text-white",
       )}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}

@@ -139,7 +139,7 @@ export function HomeSections() {
       </Section>
 
       {/* Licensing */}
-      <section id="licensing" className="relative overflow-hidden py-20 md:py-28">
+      <section id="licensing" className="relative overflow-hidden py-16 md:py-24">
         <Image
           src={IMAGES.officeModern.src}
           alt={IMAGES.officeModern.alt}
@@ -147,16 +147,16 @@ export function HomeSections() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-navy/78" />
+        <div className="absolute inset-0 bg-navy/80" />
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
-            <p className="mb-3 text-xs font-medium tracking-[0.22em] text-gold uppercase">
+            <p className="mb-3 text-[11px] font-medium tracking-[0.26em] text-gold uppercase">
               Licensing & franchising
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            <h2 className="font-serif text-2xl font-medium leading-snug tracking-tight text-white md:text-3xl">
               Expand without building everything yourself
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-white/75">
               International companies do not always need to construct full local
               operations from the ground up. Through Grupos Caceres, many can
               license or franchise their model to qualified Venezuelan operators
@@ -305,10 +305,10 @@ export function HomeSections() {
         </div>
 
         <div className="mt-14">
-          <p className="mb-3 text-xs font-medium tracking-[0.22em] text-gold-muted uppercase dark:text-gold">
+          <p className="mb-3 text-[11px] font-medium tracking-[0.26em] text-gold-muted uppercase dark:text-gold">
             Current investment opportunities
           </p>
-          <h3 className="max-w-2xl text-2xl font-semibold text-navy dark:text-white">
+          <h3 className="max-w-2xl font-serif text-xl font-medium text-navy dark:text-white md:text-2xl">
             Themes for qualified investors
           </h3>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
@@ -436,7 +436,7 @@ export function HomeSections() {
             </div>
             <div className="relative flex flex-col items-start justify-between gap-6 bg-[var(--surface-elevated)]/90 p-8 backdrop-blur-sm md:flex-row md:items-center md:p-10">
               <div className="max-w-xl">
-                <h3 className="text-2xl font-semibold text-navy dark:text-white">
+                <h3 className="font-serif text-xl font-medium text-navy dark:text-white md:text-2xl">
                   Ready to assess your options in Venezuela?
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">

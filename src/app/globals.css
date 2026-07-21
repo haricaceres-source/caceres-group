@@ -3,42 +3,43 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-navy: #0b1f3a;
-  --color-navy-deep: #071525;
-  --color-navy-soft: #132a4a;
-  --color-gold: #c9a227;
-  --color-gold-soft: #d4b44a;
-  --color-gold-muted: #a8861f;
-  --color-surface: #f4f6f8;
+  --color-navy: #0a1628;
+  --color-navy-deep: #060e18;
+  --color-navy-soft: #142338;
+  --color-gold: #a8945c;
+  --color-gold-soft: #b8a66e;
+  --color-gold-muted: #8f7a45;
+  --color-surface: #f7f8fa;
   --color-surface-elevated: #ffffff;
-  --color-ink: #0b1f3a;
-  --color-ink-muted: #5b6b7c;
-  --color-line: #e2e8f0;
+  --color-ink: #0a1628;
+  --color-ink-muted: #5a6573;
+  --color-line: #e5e8ec;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #0b1f3a;
-  --muted: #5b6b7c;
-  --surface: #f4f6f8;
+  --foreground: #0a1628;
+  --muted: #5a6573;
+  --surface: #f7f8fa;
   --surface-elevated: #ffffff;
-  --line: #e2e8f0;
-  --navy: #0b1f3a;
-  --gold: #c9a227;
+  --line: #e5e8ec;
+  --navy: #0a1628;
+  --gold: #a8945c;
 }
 
 .dark {
-  --background: #071525;
-  --foreground: #f3f6f9;
-  --muted: #9aa8b8;
-  --surface: #0b1f3a;
-  --surface-elevated: #102744;
-  --line: #1e3554;
-  --navy: #0b1f3a;
-  --gold: #c9a227;
+  --background: #060e18;
+  --foreground: #f0f2f5;
+  --muted: #8b96a5;
+  --surface: #0a1628;
+  --surface-elevated: #121f30;
+  --line: #1a2a3e;
+  --navy: #0a1628;
+  --gold: #a8945c;
 }
 
 html {
@@ -51,15 +52,23 @@ body {
   font-family: var(--font-inter), "Inter", sans-serif;
 }
 
+h1,
+h2 {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
 ::selection {
-  background: color-mix(in oklab, var(--gold) 35%, transparent);
+  background: color-mix(in oklab, var(--gold) 28%, transparent);
   color: var(--foreground);
 }
 
 .page-progress {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 2px;
+  height: 1px;
   z-index: 100;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   transform-origin: left;
@@ -70,32 +79,32 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in oklab, var(--gold) 70%, transparent),
+    color-mix(in oklab, var(--gold) 55%, transparent),
     transparent
   );
 }
 
 .map-grid {
   background-image:
-    linear-gradient(color-mix(in oklab, var(--gold) 18%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--gold) 18%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in oklab, var(--gold) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--gold) 12%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
 
 .glass {
-  background: color-mix(in oklab, var(--surface-elevated) 88%, transparent);
-  backdrop-filter: blur(12px);
+  background: color-mix(in oklab, var(--surface-elevated) 92%, transparent);
+  backdrop-filter: blur(10px);
 }
 
 .glass-dark {
-  background: rgba(11, 31, 58, 0.45);
-  backdrop-filter: blur(14px);
+  background: rgba(10, 22, 40, 0.5);
+  backdrop-filter: blur(12px);
 }
 
 /* Subtle Venezuela outline watermark */
 .venezuela-watermark {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 220' fill='none'%3E%3Cpath d='M95 18c22 2 48 14 62 34 10 14 16 32 12 50-3 14-12 24-22 34-8 8-14 18-12 30 2 12 12 20 10 34-2 12-14 22-28 24-18 3-34-8-48-18-12-8-28-12-38-24-12-14-14-34-8-50 4-12 14-20 18-32 6-16 4-34 12-48 8-14 26-22 42-34z' stroke='%23C9A227' stroke-opacity='0.18' stroke-width='2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 220' fill='none'%3E%3Cpath d='M95 18c22 2 48 14 62 34 10 14 16 32 12 50-3 14-12 24-22 34-8 8-14 18-12 30 2 12 12 20 10 34-2 12-14 22-28 24-18 3-34-8-48-18-12-8-28-12-38-24-12-14-14-34-8-50 4-12 14-20 18-32 6-16 4-34 12-48 8-14 26-22 42-34z' stroke='%23A8945C' stroke-opacity='0.14' stroke-width='2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 8% center;
   background-size: min(38vw, 360px);
@@ -104,7 +113,7 @@ body {
 @keyframes hero-fade-in {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -113,7 +122,7 @@ body {
 }
 
 .hero-fade {
-  animation: hero-fade-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

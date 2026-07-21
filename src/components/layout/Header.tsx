@@ -36,24 +36,26 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
         transparent
           ? "border-transparent bg-transparent"
-          : "border-[var(--line)] bg-[var(--background)]/92 backdrop-blur-md",
+          : "border-[var(--line)]/80 bg-[var(--background)]/94 backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5">
         <Logo inverted={transparent} />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
           {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "px-3 py-2 text-sm transition-colors",
+                "px-3 py-2 text-[13px] tracking-[0.02em] transition-colors",
                 pathname === link.href
-                  ? "text-gold"
+                  ? transparent
+                    ? "text-gold"
+                    : "text-navy dark:text-white"
                   : transparent
-                    ? "text-white/90 hover:text-white"
-                    : "text-navy/80 hover:text-navy dark:text-white/80 dark:hover:text-white",
+                    ? "text-white/80 hover:text-white"
+                    : "text-navy/70 hover:text-navy dark:text-white/70 dark:hover:text-white",
               )}
             >
               {link.label}
@@ -66,8 +68,9 @@ export function Header() {
           <Button
             href="/contact"
             className={cn(
-              "!py-2.5 !text-xs uppercase tracking-[0.14em]",
-              transparent && "!bg-gold !text-navy hover:!bg-gold-soft",
+              "!py-2 !text-[11px] uppercase tracking-[0.16em]",
+              transparent &&
+                "!border !border-white/35 !bg-transparent !text-white hover:!border-gold hover:!bg-transparent hover:!text-gold",
             )}
           >
             Schedule a Consultation
@@ -81,7 +84,7 @@ export function Header() {
             className={cn(
               "inline-flex h-9 w-9 items-center justify-center border",
               transparent
-                ? "border-white/35 text-white"
+                ? "border-white/30 text-white"
                 : "border-[var(--line)] text-navy dark:text-white",
             )}
             onClick={() => setOpen((v) => !v)}
@@ -102,7 +105,9 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   "border-b border-[var(--line)] py-3 text-sm",
-                  pathname === link.href ? "text-gold" : "text-navy dark:text-white",
+                  pathname === link.href
+                    ? "text-navy dark:text-white"
+                    : "text-navy/80 dark:text-white/80",
                 )}
               >
                 {link.label}

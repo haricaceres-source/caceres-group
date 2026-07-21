@@ -28,22 +28,22 @@ export function PageHero({
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-navy/72" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/65 to-navy/45" />
+        <div className="absolute inset-0 bg-navy/78" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/88 via-navy/70 to-navy/50" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-20">
         <FadeIn>
-          <p className="mb-3 text-xs font-medium tracking-[0.22em] text-gold uppercase">
+          <p className="mb-3 text-[11px] font-medium tracking-[0.26em] text-gold uppercase">
             {eyebrow}
           </p>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl">
+          <h1 className="max-w-3xl font-serif text-3xl font-medium leading-snug tracking-tight text-white md:text-4xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/75">
             {description}
           </p>
-          <div className="gold-rule mt-10 max-w-xs" />
+          <div className="gold-rule mt-8 max-w-xs" />
         </FadeIn>
       </div>
     </section>

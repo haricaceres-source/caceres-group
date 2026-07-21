@@ -7,9 +7,9 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-navy text-white hover:bg-navy-soft dark:bg-gold dark:text-navy dark:hover:bg-gold-soft",
   secondary:
-    "border border-navy/20 text-navy hover:border-gold hover:text-navy dark:border-white/20 dark:text-white dark:hover:border-gold dark:hover:text-gold",
+    "border border-navy/15 text-navy hover:border-navy/35 dark:border-white/15 dark:text-white dark:hover:border-white/35",
   ghost:
-    "text-navy hover:text-gold dark:text-white dark:hover:text-gold",
+    "text-navy hover:text-navy-soft dark:text-white dark:hover:text-white/80",
 };
 
 type ButtonProps = {
@@ -30,7 +30,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-300",
+    "inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium tracking-[0.04em] transition-colors duration-300",
     variants[variant],
     className,
   );

@@ -25,7 +25,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "py-20 md:py-28",
+        "py-16 md:py-24",
         tone === "muted" && "bg-[var(--surface)]",
         tone === "navy" && "bg-navy text-white",
         className,
@@ -33,11 +33,11 @@ export function Section({
     >
       <div className={cn("mx-auto max-w-6xl px-6", containerClassName)}>
         {(eyebrow || title || description) && (
-          <div className="mb-12 max-w-3xl md:mb-16">
+          <div className="mb-10 max-w-3xl md:mb-14">
             {eyebrow && (
               <p
                 className={cn(
-                  "mb-3 text-xs font-medium uppercase tracking-[0.22em]",
+                  "mb-3 text-[11px] font-medium uppercase tracking-[0.26em]",
                   tone === "navy" ? "text-gold" : "text-gold-muted dark:text-gold",
                 )}
               >
@@ -47,7 +47,7 @@ export function Section({
             {title && (
               <h2
                 className={cn(
-                  "text-3xl font-semibold tracking-tight md:text-4xl",
+                  "font-serif text-2xl font-medium leading-snug tracking-tight md:text-3xl",
                   tone === "navy" ? "text-white" : "text-navy dark:text-white",
                 )}
               >
@@ -57,9 +57,9 @@ export function Section({
             {description && (
               <p
                 className={cn(
-                  "mt-4 text-base leading-relaxed md:text-lg",
+                  "mt-4 text-base leading-relaxed",
                   tone === "navy"
-                    ? "text-white/75"
+                    ? "text-white/70"
                     : "text-[var(--muted)]",
                 )}
               >
