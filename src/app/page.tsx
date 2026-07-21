@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: {
-    absolute: `${SITE.name} (Caceres Group) | Venezuela Market-Entry Consulting`,
+    absolute: "Grupos Caceres | Capital & Market Entry Advisory — Venezuela",
   },
   description: SITE.description,
   alternates: {

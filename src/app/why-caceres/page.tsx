@@ -5,12 +5,11 @@ import { Card } from "@/components/ui/Card";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Section } from "@/components/ui/Section";
 import { PROCESS_STEPS } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Why Grupos Caceres (Caceres Group)",
+  title: "Why Grupos Caceres",
   description:
-    "Why choose Grupos Caceres (Caceres Group) for Venezuela consulting: discovery, research, strategy, partnerships, licensing, and market entry execution.",
+    "Why choose Grupos Caceres for Venezuela capital access and market entry: discovery, research, strategy, partnerships, and execution.",
 };
 
 const reasons = [
@@ -38,8 +37,6 @@ export default function WhyCaceresPage() {
         eyebrow="Why Grupos Caceres"
         title="How we simplify market entry"
         description="International companies do not need more complexity. They need a clear path from intent to presence—grounded in local knowledge, selective counterpart access, and practical standards."
-        imageSrc={IMAGES.corporateArchitecture.src}
-        imageAlt={IMAGES.corporateArchitecture.alt}
       />
 
       <Section
@@ -47,36 +44,31 @@ export default function WhyCaceresPage() {
         title="From discovery to growth"
         description="A structured engagement model that keeps strategy and execution connected."
       >
-        <div className="relative">
-          <div className="absolute top-0 bottom-0 left-[1.15rem] hidden w-px bg-[var(--line)] md:block" />
-          <div className="space-y-5">
-            {PROCESS_STEPS.map((step) => (
-              <FadeIn key={step.title}>
-                <div className="grid gap-4 md:grid-cols-[3rem_1fr]">
-                  <div className="relative z-10 flex h-9 w-9 items-center justify-center border border-gold/50 bg-[var(--background)] text-xs font-semibold text-gold">
-                    {step.step}
-                  </div>
-                  <Card>
-                    <h2 className="text-lg font-semibold text-navy dark:text-white">
-                      {step.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-                      {step.description}
-                    </p>
-                  </Card>
+        <div className="space-y-0">
+          {PROCESS_STEPS.map((step) => (
+            <FadeIn key={step.title}>
+              <div className="grid gap-4 border-t border-[var(--line)] py-8 md:grid-cols-[4rem_1fr] md:gap-8">
+                <p className="font-serif text-2xl text-gold">{step.step}</p>
+                <div>
+                  <h2 className="font-serif text-lg font-medium text-navy dark:text-white">
+                    {step.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+                    {step.description}
+                  </p>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </Section>
 
       <Section tone="muted" eyebrow="Difference" title="What clients can expect">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-3">
           {reasons.map((reason) => (
             <FadeIn key={reason.title}>
               <Card className="h-full">
-                <h3 className="text-lg font-semibold text-navy dark:text-white">
+                <h3 className="font-serif text-lg font-medium text-navy dark:text-white">
                   {reason.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
@@ -90,18 +82,19 @@ export default function WhyCaceresPage() {
 
       <Section>
         <FadeIn>
-          <div className="flex flex-col items-start justify-between gap-6 border border-[var(--line)] bg-navy p-8 text-white md:flex-row md:items-center md:p-10">
+          <div className="flex flex-col items-start justify-between gap-8 border-t border-gold/40 bg-navy p-10 text-white md:flex-row md:items-center">
             <div className="max-w-xl">
-              <h2 className="text-2xl font-semibold">
+              <h2 className="font-serif text-2xl font-medium">
                 Engage with a high-touch advisory practice focused on Venezuela
               </h2>
-              <p className="mt-3 text-sm text-white/70">
+              <p className="mt-3 text-sm text-white/65">
                 Share your objectives. We will outline a practical next step.
               </p>
             </div>
             <Button
               href="/contact"
-              className="!bg-gold !text-navy hover:!bg-gold-soft"
+              variant="secondary"
+              className="!border-white/40 !text-white hover:!bg-white hover:!text-navy"
             >
               Schedule a Consultation
             </Button>

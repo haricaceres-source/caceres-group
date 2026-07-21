@@ -1,9 +1,9 @@
 export const SITE = {
   name: "Grupos Caceres",
   alternateName: "Caceres Group",
-  tagline: "Strategic consulting and market-entry advisory for Venezuela",
+  tagline: "Capital access and market entry advisory for Venezuela",
   description:
-    "Grupos Caceres (Caceres Group) — early-stage, high-touch Venezuela market-entry advisory. We support international companies with market entry strategy, partnerships, licensing, and regulatory guidance.",
+    "Grupos Caceres advises international companies and investors on capital access, market entry, and strategic partnerships across Venezuela's mining, pharmaceutical, and industrial sectors.",
   url: "https://caceres-group.vercel.app",
   email: "info@caceres-group.com",
   phone: "+1 (954) 740-0389",
@@ -11,16 +11,26 @@ export const SITE = {
   address: "Caracas, Venezuela · Miami, Florida",
 } as const;
 
-export const NAV_LINKS = [
-  { href: "/", label: "Home" },
+/** Primary top-level nav — Firm dropdown holds remaining pages. */
+export const PRIMARY_NAV = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/industries", label: "Industries" },
   { href: "/engagements", label: "Engagements" },
-  { href: "/why-venezuela", label: "Why Venezuela" },
-  { href: "/vision", label: "Vision" },
-  { href: "/why-caceres", label: "Why Grupos Caceres" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export const FIRM_NAV = [
+  { href: "/industries", label: "Industries" },
+  { href: "/why-venezuela", label: "Why Venezuela" },
+  { href: "/why-caceres", label: "Why Grupos" },
+  { href: "/vision", label: "Vision" },
+] as const;
+
+/** Flat list for footer / mobile / sitemap consumers. */
+export const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  ...PRIMARY_NAV,
+  ...FIRM_NAV,
 ] as const;
 
 export const VALUES = [
@@ -322,18 +332,36 @@ export const GATEWAY_POINTS = [
 /** Active and completed engagements — confidential; no invented company names. */
 export const ENGAGEMENTS = [
   {
-    sector: "Mining",
-    focus: "Capital sourcing advisory",
-    status: "Active",
+    sector: "Mining & Resources",
+    focus: "Capital Sourcing",
+    status: "Active" as const,
     summary:
-      "Currently engaged by a Venezuelan mining concession holder to source international capital for development of a cassiterite and gold project. Scope includes investor identification, capital structuring guidance, and counterpart introductions.",
+      "Engaged by a Venezuelan mining concession holder to source international capital for a cassiterite and gold development project, including investor identification and capital structuring.",
   },
   {
-    sector: "Pharmaceuticals",
-    focus: "Distribution relationship",
-    status: "Completed",
+    sector: "Pharmaceutical Distribution",
+    focus: "Distribution Partnership",
+    status: "Completed" as const,
     summary:
       "Structured a pharmaceutical distribution relationship with one of Venezuela's leading national pharmacy networks.",
+  },
+] as const;
+
+export const HERO_STATS = [
+  {
+    value: "2",
+    label: "Active Sectors",
+    detail: "Mining & Pharmaceutical",
+  },
+  {
+    value: "1",
+    label: "Regional Focus",
+    detail: "Venezuela",
+  },
+  {
+    value: "150M+",
+    label: "Prior Experience",
+    detail: "Wealth management reallocation",
   },
 ] as const;
 

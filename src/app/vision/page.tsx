@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Section } from "@/components/ui/Section";
-import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Vision | Grupos Caceres Long-Term Direction",
+  title: "Vision",
   description:
-    "Grupos Caceres vision and thesis: exploring fintech and agri microcredit models, and evaluating a long-term holding structure for licenses and partnerships in Venezuela.",
+    "Grupos Caceres vision: exploring fintech and agri microcredit models, and evaluating a long-term holding structure for licenses and partnerships in Venezuela.",
 };
 
 const theses = [
@@ -34,8 +33,6 @@ export default function VisionPage() {
         eyebrow="Vision"
         title="Long-term direction, under evaluation"
         description="Grupos Caceres is building from active advisory work. Beyond near-term client engagements, we are exploring thesis areas that may shape how we support Venezuela’s private economy over time."
-        imageSrc={IMAGES.mountains.src}
-        imageAlt={IMAGES.mountains.alt}
       />
 
       <Section
@@ -43,12 +40,11 @@ export default function VisionPage() {
         title="What we are exploring"
         description="These ideas describe long-term direction. They are under evaluation and should not be read as product launches, fundraising claims, or guarantees of execution."
       >
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-3">
           {theses.map((item) => (
             <FadeIn key={item.title}>
               <Card className="h-full">
-                <div className="mb-4 h-px w-10 bg-gold" />
-                <h2 className="text-lg font-semibold text-navy dark:text-white">
+                <h2 className="font-serif text-lg font-medium text-navy dark:text-white">
                   {item.title}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
@@ -62,9 +58,9 @@ export default function VisionPage() {
 
       <Section tone="muted">
         <FadeIn>
-          <div className="flex flex-col items-start justify-between gap-6 border border-[var(--line)] bg-[var(--surface-elevated)] p-8 md:flex-row md:items-center md:p-10">
+          <div className="flex flex-col items-start justify-between gap-8 border-t border-gold/40 pt-10 md:flex-row md:items-center">
             <div className="max-w-xl">
-              <h2 className="text-2xl font-semibold text-navy dark:text-white">
+              <h2 className="font-serif text-2xl font-medium text-navy dark:text-white">
                 Discuss direction or an active engagement
               </h2>
               <p className="mt-3 text-sm text-[var(--muted)]">

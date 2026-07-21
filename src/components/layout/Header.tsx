@@ -2,21 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Button } from "@/components/ui/Button";
-import { NAV_LINKS } from "@/lib/constants";
+import { FIRM_NAV, PRIMARY_NAV } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [firmOpen, setFirmOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const firmRef = useRef<HTMLDivElement>(null);
   const isHome = pathname === "/";
-  // On home at top: fully transparent over El Ávila — never a solid white bar
   const transparent = isHome && !scrolled && !open;
+  const firmActive = FIRM_NAV.some((link) => pathname === link.href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -27,40 +29,94 @@ export function Header() {
 
   useEffect(() => {
     setOpen(false);
+    setFirmOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (firmRef.current && !firmRef.current.contains(e.target as Node)) {
+        setFirmOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, []);
+
+  const linkClass = (active: boolean) =>
+    cn(
+      "px-3 py-2 text-[12px] font-medium tracking-[0.15em] uppercase transition-colors",
+      active
+        ? transparent
+          ? "text-gold"
+          : "text-navy dark:text-white"
+        : transparent
+          ? "text-white/80 hover:text-white"
+          : "text-navy/65 hover:text-navy dark:text-white/65 dark:hover:text-white",
+    );
 
   return (
     <header
       className={cn(
-        // Fixed so hero is true first viewport (nav overlays, does not push content)
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
         transparent
           ? "border-transparent bg-transparent"
-          : "border-[var(--line)]/80 bg-[var(--background)]/94 backdrop-blur-md",
+          : "border-black/10 bg-white dark:border-white/10 dark:bg-[var(--background)]",
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
         <Logo inverted={transparent} />
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
-          {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
+          {PRIMARY_NAV.filter((link) => link.href !== "/contact").map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                "px-3 py-2 text-[13px] tracking-[0.02em] transition-colors",
-                pathname === link.href
-                  ? transparent
-                    ? "text-gold"
-                    : "text-navy dark:text-white"
-                  : transparent
-                    ? "text-white/80 hover:text-white"
-                    : "text-navy/70 hover:text-navy dark:text-white/70 dark:hover:text-white",
-              )}
+              className={linkClass(pathname === link.href)}
             >
               {link.label}
             </Link>
           ))}
+
+          <div className="relative" ref={firmRef}>
+            <button
+              type="button"
+              className={cn(linkClass(firmActive), "inline-flex items-center gap-1")}
+              aria-expanded={firmOpen}
+              aria-haspopup="true"
+              onClick={() => setFirmOpen((v) => !v)}
+            >
+              Firm
+              <ChevronDown
+                size={12}
+                className={cn("transition-transform", firmOpen && "rotate-180")}
+              />
+            </button>
+            {firmOpen && (
+              <div className="absolute top-full left-0 mt-2 min-w-[220px] border border-black/10 bg-white py-2 shadow-none dark:border-white/10 dark:bg-[var(--surface-elevated)]">
+                {FIRM_NAV.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "block px-4 py-2.5 text-[11px] font-medium tracking-[0.15em] uppercase transition-colors",
+                      pathname === link.href
+                        ? "text-gold"
+                        : "text-navy/70 hover:text-navy dark:text-white/70 dark:hover:text-white",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link
+            href="/contact"
+            className={linkClass(pathname === "/contact")}
+          >
+            Contact
+          </Link>
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -68,9 +124,9 @@ export function Header() {
           <Button
             href="/contact"
             className={cn(
-              "!py-2 !text-[11px] uppercase tracking-[0.16em]",
+              "!py-2",
               transparent &&
-                "!border !border-white/35 !bg-transparent !text-white hover:!border-gold hover:!bg-transparent hover:!text-gold",
+                "!border !border-white/40 !bg-transparent !text-white hover:!border-gold hover:!bg-transparent hover:!text-gold",
             )}
           >
             Schedule a Consultation
@@ -82,7 +138,7 @@ export function Header() {
           <button
             type="button"
             className={cn(
-              "inline-flex h-9 w-9 items-center justify-center border",
+              "inline-flex h-9 w-9 items-center justify-center border rounded-none",
               transparent
                 ? "border-white/30 text-white"
                 : "border-[var(--line)] text-navy dark:text-white",
@@ -97,14 +153,31 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-[var(--line)] bg-[var(--background)] lg:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-6 py-4" aria-label="Mobile">
-            {NAV_LINKS.map((link) => (
+        <div className="border-t border-black/10 bg-white dark:border-white/10 dark:bg-[var(--background)] lg:hidden">
+          <nav className="mx-auto flex max-w-5xl flex-col px-6 py-4" aria-label="Mobile">
+            {PRIMARY_NAV.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "border-b border-[var(--line)] py-3 text-sm",
+                  "border-b border-[var(--line)] py-3 text-[12px] font-medium tracking-[0.15em] uppercase",
+                  pathname === link.href
+                    ? "text-navy dark:text-white"
+                    : "text-navy/80 dark:text-white/80",
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <p className="pt-4 pb-2 text-[10px] font-medium tracking-[0.25em] text-gold uppercase">
+              Firm
+            </p>
+            {FIRM_NAV.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "border-b border-[var(--line)] py-3 pl-2 text-[12px] font-medium tracking-[0.15em] uppercase",
                   pathname === link.href
                     ? "text-navy dark:text-white"
                     : "text-navy/80 dark:text-white/80",

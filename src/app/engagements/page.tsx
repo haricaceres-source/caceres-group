@@ -4,24 +4,22 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Section } from "@/components/ui/Section";
+import { StatusBadge } from "@/components/ui/StatusBadge";
 import { ENGAGEMENTS } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Engagements | Caceres Group Venezuela Work",
+  title: "Engagements",
   description:
-    "How Grupos Caceres (Caceres Group) supports Venezuela market entry, partnerships, and investment advisory—confidential representative engagements.",
+    "Active Engagements: capital sourcing for mining and pharmaceutical distribution partnerships — confidential work by Grupos Caceres in Venezuela.",
 };
 
 export default function EngagementsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Representative engagements"
-        title="Active work and completed matters"
+        eyebrow="Active Engagements"
+        title="Active Engagements"
         description="Engagements are presented anonymously to protect client confidentiality. They describe the nature of work—not named companies, and not claims of ownership or exclusive representation."
-        imageSrc={IMAGES.corporateArchitecture.src}
-        imageAlt={IMAGES.corporateArchitecture.alt}
       />
 
       <Section
@@ -29,19 +27,17 @@ export default function EngagementsPage() {
         title="Current and completed advisory work"
         description="Each matter is handled with discretion. The summaries below reflect real engagement types Grupos Caceres is supporting or has completed."
       >
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           {ENGAGEMENTS.map((item) => (
             <FadeIn key={`${item.sector}-${item.focus}`}>
               <Card className="h-full">
                 <div className="flex items-start justify-between gap-3">
-                  <p className="text-xs tracking-[0.18em] text-gold uppercase">
+                  <p className="text-[11px] tracking-[0.25em] text-gold uppercase">
                     {item.sector}
                   </p>
-                  <span className="shrink-0 text-xs tracking-[0.14em] text-gold-muted uppercase dark:text-gold">
-                    {item.status}
-                  </span>
+                  <StatusBadge status={item.status} />
                 </div>
-                <h2 className="mt-3 text-xl font-semibold text-navy dark:text-white">
+                <h2 className="mt-4 font-serif text-xl font-medium text-navy dark:text-white">
                   {item.focus}
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">
@@ -55,9 +51,9 @@ export default function EngagementsPage() {
 
       <Section tone="muted">
         <FadeIn>
-          <div className="flex flex-col items-start justify-between gap-6 border border-[var(--line)] bg-[var(--surface-elevated)] p-8 md:flex-row md:items-center md:p-10">
+          <div className="flex flex-col items-start justify-between gap-8 border-t border-gold/40 pt-10 md:flex-row md:items-center">
             <div className="max-w-xl">
-              <h2 className="text-2xl font-semibold text-navy dark:text-white">
+              <h2 className="font-serif text-2xl font-medium text-navy dark:text-white">
                 Discuss a confidential engagement
               </h2>
               <p className="mt-3 text-sm text-[var(--muted)]">

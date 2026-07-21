@@ -15,7 +15,7 @@ export function Logo({ className, compact = false, inverted = false }: LogoProps
       className={cn("group inline-flex items-center gap-3", className)}
       aria-label="Grupos Caceres home"
     >
-      <span className="relative flex h-9 w-9 items-center justify-center border border-gold/35 bg-navy">
+      <span className="relative flex h-9 w-9 items-center justify-center rounded-none border border-gold/40 bg-navy">
         <span className="font-serif text-sm font-medium tracking-[0.08em] text-gold">
           GC
         </span>

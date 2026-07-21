@@ -5,12 +5,11 @@ import { Card } from "@/components/ui/Card";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Section } from "@/components/ui/Section";
 import { SERVICES } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Services | Venezuela Market Entry Consulting",
+  title: "Services",
   description:
-    "Grupos Caceres (Caceres Group) services: market entry Venezuela strategy, business licensing, regulatory guidance, partner identification, due diligence, and operational support.",
+    "Grupos Caceres services: capital access, market entry, licensing, partnerships, regulatory guidance, and investment advisory in Venezuela.",
 };
 
 export default function ServicesPage() {
@@ -20,17 +19,14 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Advisory capabilities for market entry and growth"
         description="We support international companies from initial assessment through licensing, partnership formation, regulatory navigation, and operating execution."
-        imageSrc={IMAGES.officeModern.src}
-        imageAlt={IMAGES.officeModern.alt}
       />
 
       <Section>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {SERVICES.map((service, index) => (
             <FadeIn key={service.title} delay={(index % 4) * 0.04}>
               <Card className="h-full">
-                <div className="mb-4 h-px w-10 bg-gold" />
-                <h2 className="text-lg font-semibold text-navy dark:text-white">
+                <h2 className="font-serif text-lg font-medium text-navy dark:text-white">
                   {service.title}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
@@ -44,9 +40,9 @@ export default function ServicesPage() {
 
       <Section tone="muted">
         <FadeIn>
-          <div className="flex flex-col items-start justify-between gap-6 border border-[var(--line)] bg-[var(--surface-elevated)] p-8 md:flex-row md:items-center">
+          <div className="flex flex-col items-start justify-between gap-8 border-t border-gold/40 pt-10 md:flex-row md:items-center">
             <div>
-              <h2 className="text-2xl font-semibold text-navy dark:text-white">
+              <h2 className="font-serif text-2xl font-medium text-navy dark:text-white">
                 Discuss the right scope for your objectives
               </h2>
               <p className="mt-3 max-w-xl text-sm text-[var(--muted)]">

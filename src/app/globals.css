@@ -3,17 +3,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-navy: #0a1628;
-  --color-navy-deep: #060e18;
-  --color-navy-soft: #142338;
-  --color-gold: #a8945c;
-  --color-gold-soft: #b8a66e;
-  --color-gold-muted: #8f7a45;
-  --color-surface: #f7f8fa;
+  --color-navy: #0b1220;
+  --color-navy-deep: #070b14;
+  --color-navy-soft: #151d2e;
+  --color-gold: #b08d57;
+  --color-gold-soft: #c4a46e;
+  --color-gold-muted: #b08d57;
+  --color-bronze: #b08d57;
+  --color-surface: #f6f5f2;
   --color-surface-elevated: #ffffff;
-  --color-ink: #0a1628;
-  --color-ink-muted: #5a6573;
-  --color-line: #e5e8ec;
+  --color-ink: #0b1220;
+  --color-ink-muted: #5c6570;
+  --color-line: #e8e6e1;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
@@ -22,24 +23,26 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a1628;
-  --muted: #5a6573;
-  --surface: #f7f8fa;
+  --foreground: #0b1220;
+  --muted: #5c6570;
+  --surface: #f6f5f2;
   --surface-elevated: #ffffff;
-  --line: #e5e8ec;
-  --navy: #0a1628;
-  --gold: #a8945c;
+  --line: #e8e6e1;
+  --navy: #0b1220;
+  --gold: #b08d57;
+  --bronze: #b08d57;
 }
 
 .dark {
-  --background: #060e18;
-  --foreground: #f0f2f5;
-  --muted: #8b96a5;
-  --surface: #0a1628;
-  --surface-elevated: #121f30;
-  --line: #1a2a3e;
-  --navy: #0a1628;
-  --gold: #a8945c;
+  --background: #070b14;
+  --foreground: #f0f1f3;
+  --muted: #8b93a0;
+  --surface: #0b1220;
+  --surface-elevated: #121a28;
+  --line: #1c2535;
+  --navy: #0b1220;
+  --gold: #b08d57;
+  --bronze: #b08d57;
 }
 
 html {
@@ -50,10 +53,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -61,7 +67,7 @@ h2 {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--gold) 28%, transparent);
+  background: color-mix(in oklab, var(--bronze) 28%, transparent);
   color: var(--foreground);
 }
 
@@ -70,7 +76,7 @@ h2 {
   inset: 0 0 auto 0;
   height: 1px;
   z-index: 100;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--bronze), transparent);
   transform-origin: left;
 }
 
@@ -79,35 +85,36 @@ h2 {
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in oklab, var(--gold) 55%, transparent),
+    color-mix(in oklab, var(--bronze) 55%, transparent),
     transparent
   );
 }
 
+.bronze-rule {
+  height: 1px;
+  background: var(--bronze);
+  opacity: 0.45;
+}
+
 .map-grid {
   background-image:
-    linear-gradient(color-mix(in oklab, var(--gold) 12%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--gold) 12%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in oklab, var(--bronze) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--bronze) 10%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
 
-.glass {
-  background: color-mix(in oklab, var(--surface-elevated) 92%, transparent);
-  backdrop-filter: blur(10px);
+/* Institutional photo treatment: grayscale + navy overlay */
+.img-duotone {
+  filter: grayscale(100%);
 }
 
-.glass-dark {
-  background: rgba(10, 22, 40, 0.5);
-  backdrop-filter: blur(12px);
-}
-
-/* Subtle Venezuela outline watermark */
-.venezuela-watermark {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 220' fill='none'%3E%3Cpath d='M95 18c22 2 48 14 62 34 10 14 16 32 12 50-3 14-12 24-22 34-8 8-14 18-12 30 2 12 12 20 10 34-2 12-14 22-28 24-18 3-34-8-48-18-12-8-28-12-38-24-12-14-14-34-8-50 4-12 14-20 18-32 6-16 4-34 12-48 8-14 26-22 42-34z' stroke='%23A8945C' stroke-opacity='0.14' stroke-width='2'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 8% center;
-  background-size: min(38vw, 360px);
+.img-duotone-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--navy) 42%, transparent);
+  pointer-events: none;
 }
 
 @keyframes hero-fade-in {

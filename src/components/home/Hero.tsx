@@ -1,60 +1,60 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { IMAGES } from "@/lib/images";
+import { HERO_STATS } from "@/lib/constants";
 
-/** Full first viewport — sole El Ávila image on the site. */
+/** Solid navy hero — institutional register, no background image. */
 export function Hero() {
   return (
-    <section className="relative h-[100svh] min-h-[100svh] w-full overflow-hidden text-white">
-      <Image
-        src={IMAGES.heroAvila.src}
-        alt={IMAGES.heroAvila.alt}
-        fill
-        priority
-        quality={100}
-        unoptimized
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+    <>
+      <section className="relative w-full overflow-hidden bg-navy text-white">
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col justify-center px-6 pt-36 pb-28 md:pt-44 md:pb-36">
+          <p className="hero-fade mb-5 text-[11px] font-medium tracking-[0.25em] text-gold uppercase [animation-delay:0ms]">
+            Grupos Caceres
+          </p>
 
-      {/* Restrained overlay — denser institutional register, mountain remains visible */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/55 via-navy/20 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-navy/15" />
+          <h1 className="hero-fade max-w-3xl font-serif text-3xl font-medium leading-tight tracking-tight text-balance sm:text-4xl md:text-[2.75rem] lg:text-5xl [animation-delay:80ms]">
+            Capital Access and Market Entry for Venezuela
+          </h1>
 
-      <div className="relative z-10 mx-auto flex h-full min-h-[100svh] max-w-6xl flex-col justify-center px-6 pt-24 pb-16 md:pt-28">
-        <p className="hero-fade mb-4 text-[11px] font-medium tracking-[0.28em] text-gold uppercase [animation-delay:0ms]">
-          Grupos Caceres
-        </p>
+          <p className="hero-fade mt-6 max-w-2xl text-base leading-relaxed text-white/85 md:text-[1.05rem] [animation-delay:160ms]">
+            We connect international capital and companies with vetted
+            opportunities and execution partners across Venezuela&apos;s mining,
+            pharmaceutical, and industrial sectors.
+          </p>
 
-        <h1 className="hero-fade max-w-3xl font-serif text-3xl font-medium leading-[1.15] tracking-tight text-balance sm:text-4xl md:text-[2.75rem] lg:text-5xl [animation-delay:80ms]">
-          Your Strategic Partner for Doing Business in Venezuela
-        </h1>
-
-        <p className="hero-fade mt-5 max-w-xl text-base leading-relaxed text-white/90 md:text-[1.05rem] [animation-delay:160ms]">
-          Early-stage, high-touch advisory for international companies seeking
-          to enter, operate, license, partner, and invest in Venezuela—with
-          local judgment and disciplined execution.
-        </p>
-
-        <div className="hero-fade mt-9 flex flex-col gap-3 sm:flex-row [animation-delay:240ms]">
-          <Button
-            href="/contact"
-            className="!bg-gold !text-navy hover:!bg-gold-soft"
-          >
-            Schedule a Consultation
-          </Button>
-          <Button
-            href="/services"
-            variant="secondary"
-            className="glass-dark !border-white/25 !text-white hover:!border-white/45"
-          >
-            Explore Our Services
-          </Button>
+          <div className="hero-fade mt-10 flex flex-col gap-3 sm:flex-row [animation-delay:240ms]">
+            <Button href="/contact">Schedule a Consultation</Button>
+            <Button
+              href="/services"
+              variant="secondary"
+              className="!border-white/40 !text-white hover:!border-white hover:!bg-white hover:!text-navy"
+            >
+              Explore Our Services
+            </Button>
+          </div>
         </div>
+      </section>
 
-        <p className="hero-fade mt-12 max-w-xl text-[11px] tracking-[0.22em] text-white/65 uppercase [animation-delay:320ms]">
-          Caracas · Market Entry Advisory
-        </p>
+      <StatsBar />
+    </>
+  );
+}
+
+function StatsBar() {
+  return (
+    <section className="border-b border-[var(--line)] bg-white dark:bg-[var(--background)]">
+      <div className="mx-auto grid max-w-5xl gap-12 px-6 py-16 sm:grid-cols-3 md:gap-16 md:py-20">
+        {HERO_STATS.map((stat) => (
+          <div key={stat.label} className="text-center sm:text-left">
+            <p className="font-serif text-5xl font-medium tracking-tight text-navy md:text-6xl dark:text-white">
+              {stat.value}
+            </p>
+            <div className="mx-auto mt-4 h-px w-10 bg-gold sm:mx-0" />
+            <p className="mt-4 text-[11px] font-medium tracking-[0.25em] text-gold uppercase">
+              {stat.label}
+            </p>
+            <p className="mt-2 text-sm text-[var(--muted)]">{stat.detail}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

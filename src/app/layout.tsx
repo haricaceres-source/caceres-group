@@ -20,7 +20,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const pageTitle = `${SITE.name} (Caceres Group) | Venezuela Market-Entry Consulting`;
+const pageTitle =
+  "Grupos Caceres | Capital & Market Entry Advisory — Venezuela";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

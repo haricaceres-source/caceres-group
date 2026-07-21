@@ -17,17 +17,22 @@ export function ImagePanel({
   priority = false,
 }: ImagePanelProps) {
   return (
-    <div className={cn("relative min-h-[280px] overflow-hidden md:min-h-[360px]", className)}>
+    <div
+      className={cn(
+        "img-duotone-wrap relative min-h-[280px] overflow-hidden rounded-none md:min-h-[360px]",
+        className,
+      )}
+    >
       <Image
         src={src}
         alt={alt}
         fill
         priority={priority}
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover"
+        className="img-duotone object-cover"
       />
       {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-navy/15 to-transparent" />
+        <div className="absolute inset-0 bg-navy/35" />
       )}
     </div>
   );
