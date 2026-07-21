@@ -8,9 +8,9 @@ import { SITE } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Grupos Caceres (Caceres Group)",
   description:
-    "Schedule a consultation with Grupos Caceres to discuss market entry, partnerships, licensing, and investment advisory for Venezuela.",
+    "Contact Grupos Caceres (Caceres Group) for Venezuela consulting: market entry, partnerships, licensing, and investment advisory.",
 };
 
 export default function ContactPage() {

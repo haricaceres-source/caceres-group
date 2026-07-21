@@ -8,9 +8,9 @@ import { INDUSTRIES, INDUSTRY_LIST } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Industries",
+  title: "Industries | Venezuela Consulting",
   description:
-    "Sector expertise across mining, energy, banking, technology, healthcare, infrastructure, and more in Venezuela.",
+    "Grupos Caceres (Caceres Group) industry expertise for market entry Venezuela: mining, energy, banking, technology, healthcare, infrastructure, and more.",
 };
 
 export default function IndustriesPage() {

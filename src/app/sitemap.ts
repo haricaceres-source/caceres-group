@@ -8,6 +8,7 @@ const routes = [
   "/industries",
   "/engagements",
   "/why-venezuela",
+  "/vision",
   "/why-caceres",
   "/contact",
 ];

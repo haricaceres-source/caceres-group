@@ -3,9 +3,9 @@ export const SITE = {
   alternateName: "Caceres Group",
   tagline: "Strategic consulting and market-entry advisory for Venezuela",
   description:
-    "Grupos Caceres (also known as Caceres Group) provides Venezuela market-entry consulting, expansion advisory, local partnerships, and regulatory guidance for international companies.",
+    "Grupos Caceres (Caceres Group) — early-stage, high-touch Venezuela market-entry advisory. We support international companies with market entry strategy, partnerships, licensing, and regulatory guidance.",
   url: "https://caceres-group.vercel.app",
-  email: "gruposcaceres@gmail.com",
+  email: "info@caceres-group.com",
   phone: "+1 (954) 740-0389",
   phoneHref: "+19547400389",
   address: "Caracas, Venezuela · Miami, Florida",
@@ -18,6 +18,7 @@ export const NAV_LINKS = [
   { href: "/industries", label: "Industries" },
   { href: "/engagements", label: "Engagements" },
   { href: "/why-venezuela", label: "Why Venezuela" },
+  { href: "/vision", label: "Vision" },
   { href: "/why-caceres", label: "Why Grupos Caceres" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -311,62 +312,28 @@ export const GATEWAY_POINTS = [
   "Enter the Venezuelan market",
   "Expand existing operations",
   "Invest with local judgment",
-  "Operate through trusted partners",
+  "Work through qualified partners",
   "License or franchise a brand",
   "Build strategic alliances",
   "Secure commercial introductions",
   "Navigate regulatory requirements",
 ] as const;
 
-/** Anonymous, confidential illustrative engagements — no invented company names. */
+/** Active and completed engagements — confidential; no invented company names. */
 export const ENGAGEMENTS = [
   {
-    sector: "Consumer & retail",
-    focus: "Market entry via licensing",
+    sector: "Mining",
+    focus: "Capital sourcing advisory",
+    status: "Active",
     summary:
-      "Advised an international consumer brand on entering Venezuela through a licensing structure with a qualified local operator, reducing the need to build full owned infrastructure at launch.",
-    outcome:
-      "Client secured a clear entry path, counterpart evaluation framework, and commercial terms oriented around speed and risk control.",
+      "Currently engaged by a Venezuelan mining concession holder to source international capital for development of a cassiterite and gold project. Scope includes investor identification, capital structuring guidance, and counterpart introductions.",
   },
   {
-    sector: "Healthcare & pharmaceuticals",
-    focus: "Partner identification",
+    sector: "Pharmaceuticals",
+    focus: "Distribution relationship",
+    status: "Completed",
     summary:
-      "Supported a foreign healthcare supplier assessing distribution and partnership options, including counterpart screening and regulatory orientation.",
-    outcome:
-      "Leadership obtained decision-ready options and introductions aligned with quality, compliance, and channel reach.",
-  },
-  {
-    sector: "Industrial & logistics",
-    focus: "Expansion strategy",
-    summary:
-      "Assisted an established regional operator evaluating expansion into Venezuelan logistics corridors and private-sector partnerships.",
-    outcome:
-      "Engagement produced a sequenced expansion plan with prioritized counterparties and operating considerations.",
-  },
-  {
-    sector: "Natural resources",
-    focus: "Investment diligence support",
-    summary:
-      "Provided local market intelligence and counterpart context for an investor group evaluating a resource-related opportunity. Grupos Caceres does not own or operate mining or energy assets.",
-    outcome:
-      "Investors received structured diligence framing and local insight to inform go / no-go discussions.",
-  },
-  {
-    sector: "Financial services",
-    focus: "Strategic introductions",
-    summary:
-      "Facilitated selective commercial introductions for an international services firm exploring institutional relationships in Venezuela.",
-    outcome:
-      "Client progressed from exploratory interest to qualified conversations with relevant private-sector counterparts.",
-  },
-  {
-    sector: "Food & agriculture",
-    focus: "Business development",
-    summary:
-      "Supported a foreign agribusiness participant mapping channels, local operators, and partnership models for market presence.",
-    outcome:
-      "Client left with a practical shortlist of pathways and a clearer view of operating realities on the ground.",
+      "Structured a pharmaceutical distribution relationship with one of Venezuela's leading national pharmacy networks.",
   },
 ] as const;
 

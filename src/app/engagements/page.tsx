@@ -8,9 +8,9 @@ import { ENGAGEMENTS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Representative Engagements",
+  title: "Engagements | Caceres Group Venezuela Work",
   description:
-    "Anonymous, confidential illustrations of how Grupos Caceres supports international market entry, partnerships, and investment advisory in Venezuela.",
+    "How Grupos Caceres (Caceres Group) supports Venezuela market entry, partnerships, and investment advisory—confidential representative engagements.",
 };
 
 export default function EngagementsPage() {
@@ -18,38 +18,35 @@ export default function EngagementsPage() {
     <>
       <PageHero
         eyebrow="Representative engagements"
-        title="Selected client successes"
-        description="Illustrative engagements are presented anonymously to protect client confidentiality. They describe the nature of work—not named companies, and not claims of ownership or exclusive representation."
+        title="Active work and completed matters"
+        description="Engagements are presented anonymously to protect client confidentiality. They describe the nature of work—not named companies, and not claims of ownership or exclusive representation."
         imageSrc={IMAGES.corporateArchitecture.src}
         imageAlt={IMAGES.corporateArchitecture.alt}
       />
 
       <Section
         eyebrow="Confidential by design"
-        title="How we work with international clients"
-        description="Each matter is handled with discretion. The summaries below are representative of the types of advisory support Grupos Caceres provides."
+        title="Current and completed advisory work"
+        description="Each matter is handled with discretion. The summaries below reflect real engagement types Grupos Caceres is supporting or has completed."
       >
         <div className="grid gap-5 md:grid-cols-2">
           {ENGAGEMENTS.map((item) => (
             <FadeIn key={`${item.sector}-${item.focus}`}>
               <Card className="h-full">
-                <p className="text-xs tracking-[0.18em] text-gold uppercase">
-                  {item.sector}
-                </p>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-xs tracking-[0.18em] text-gold uppercase">
+                    {item.sector}
+                  </p>
+                  <span className="shrink-0 text-xs tracking-[0.14em] text-gold-muted uppercase dark:text-gold">
+                    {item.status}
+                  </span>
+                </div>
                 <h2 className="mt-3 text-xl font-semibold text-navy dark:text-white">
                   {item.focus}
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">
                   {item.summary}
                 </p>
-                <div className="mt-5 border-t border-[var(--line)] pt-4">
-                  <p className="text-xs tracking-[0.16em] text-gold-muted uppercase dark:text-gold">
-                    Outcome
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-navy/80 dark:text-white/80">
-                    {item.outcome}
-                  </p>
-                </div>
               </Card>
             </FadeIn>
           ))}

@@ -8,9 +8,9 @@ import { OPPORTUNITIES } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Why Venezuela",
+  title: "Why Venezuela | Market Entry Opportunity",
   description:
-    "Explore Venezuela’s resource endowment, strategic location, and commercial opportunities for international companies.",
+    "Why enter Venezuela now: Grupos Caceres (Caceres Group) on resources, location, and commercial opportunities for international market entry Venezuela.",
 };
 
 const highlights = [

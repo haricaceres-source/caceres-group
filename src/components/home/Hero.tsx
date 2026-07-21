@@ -31,9 +31,9 @@ export function Hero() {
         </h1>
 
         <p className="hero-fade mt-6 max-w-2xl text-base leading-relaxed text-white/95 drop-shadow-sm md:text-lg [animation-delay:160ms]">
-          The trusted gateway for international companies seeking to enter,
-          operate, license, partner, and invest in Venezuela—with local
-          knowledge and disciplined execution.
+          Early-stage, high-touch advisory for international companies seeking
+          to enter, operate, license, partner, and invest in Venezuela—with
+          local judgment and disciplined execution.
         </p>
 
         <div className="hero-fade mt-10 flex flex-col gap-3 sm:flex-row [animation-delay:240ms]">

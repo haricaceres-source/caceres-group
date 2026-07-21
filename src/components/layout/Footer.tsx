@@ -10,8 +10,8 @@ export function Footer() {
         <div>
           <Logo inverted />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
-            The trusted gateway for international companies seeking to enter,
-            expand, invest, and operate in Venezuela.
+            Early-stage market-entry advisory for international companies
+            seeking to enter, expand, invest, and operate in Venezuela.
           </p>
         </div>
 

@@ -8,9 +8,9 @@ import { PROCESS_STEPS } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Why Grupos Caceres",
+  title: "Why Grupos Caceres (Caceres Group)",
   description:
-    "See how Grupos Caceres simplifies Venezuela market entry through discovery, research, strategy, partnerships, licensing, and execution.",
+    "Why choose Grupos Caceres (Caceres Group) for Venezuela consulting: discovery, research, strategy, partnerships, licensing, and market entry execution.",
 };
 
 const reasons = [
@@ -37,7 +37,7 @@ export default function WhyCaceresPage() {
       <PageHero
         eyebrow="Why Grupos Caceres"
         title="How we simplify market entry"
-        description="International companies do not need more complexity. They need a clear path from intent to presence—grounded in local knowledge, network access, and global standards."
+        description="International companies do not need more complexity. They need a clear path from intent to presence—grounded in local knowledge, selective counterpart access, and practical standards."
         imageSrc={IMAGES.corporateArchitecture.src}
         imageAlt={IMAGES.corporateArchitecture.alt}
       />
@@ -93,7 +93,7 @@ export default function WhyCaceresPage() {
           <div className="flex flex-col items-start justify-between gap-6 border border-[var(--line)] bg-navy p-8 text-white md:flex-row md:items-center md:p-10">
             <div className="max-w-xl">
               <h2 className="text-2xl font-semibold">
-                Engage with an advisory team built for Venezuela
+                Engage with a high-touch advisory practice focused on Venezuela
               </h2>
               <p className="mt-3 text-sm text-white/70">
                 Share your objectives. We will outline a practical next step.

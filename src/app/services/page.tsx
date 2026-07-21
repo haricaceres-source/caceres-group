@@ -8,9 +8,9 @@ import { SERVICES } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services | Venezuela Market Entry Consulting",
   description:
-    "Market entry strategy, business licensing, regulatory guidance, partner identification, due diligence, and operational support for Venezuela.",
+    "Grupos Caceres (Caceres Group) services: market entry Venezuela strategy, business licensing, regulatory guidance, partner identification, due diligence, and operational support.",
 };
 
 export default function ServicesPage() {

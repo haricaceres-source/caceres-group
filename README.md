@@ -21,7 +21,7 @@ Open the local URL shown in the terminal (commonly `http://localhost:3000` or `h
 
 ## Contact
 
-- Email: gruposcaceres@gmail.com
+- Email: info@caceres-group.com
 - Phone: +1 (954) 740-0389
 
 ## Notes

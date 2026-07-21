@@ -37,7 +37,7 @@ const pillars = [
   },
   {
     icon: Handshake,
-    title: "Trusted partnerships",
+    title: "Selective partnerships",
     description:
       "Introductions to counterparties selected for credibility, capability, and fit.",
   },
@@ -59,9 +59,9 @@ export function HomeSections() {
   return (
     <>
       <Section
-        eyebrow="Trusted gateway"
+        eyebrow="Market-entry advisory"
         title="For foreign companies seeking Venezuela"
-        description="Grupos Caceres advises international companies that wish to enter, expand, invest, and operate in Venezuela—with discretion, local judgment, and disciplined execution."
+        description="Grupos Caceres is an early-stage advisory practice helping international companies enter, expand, invest, and operate in Venezuela—with discretion, local judgment, and hands-on execution."
         className="venezuela-watermark"
       >
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -173,8 +173,8 @@ export function HomeSections() {
               },
               {
                 icon: Network,
-                title: "Access our network",
-                text: "We identify experienced companies and entrepreneurs across Venezuela who can operate with discipline and scale.",
+                title: "Identify capable operators",
+                text: "We help screen experienced companies and entrepreneurs in Venezuela who can operate with discipline and scale.",
               },
               {
                 icon: TrendingUp,
@@ -202,16 +202,21 @@ export function HomeSections() {
         id="engagements"
         tone="muted"
         eyebrow="Representative engagements"
-        title="Selected client successes"
-        description="Presented anonymously to protect confidentiality. These illustrations describe the nature of our work—not named clients, and not claims of ownership."
+        title="Active work and completed matters"
+        description="Presented anonymously to protect confidentiality. These describe real engagement types—not named clients, and not claims of ownership."
       >
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {ENGAGEMENTS.slice(0, 3).map((item) => (
+        <div className="grid gap-5 md:grid-cols-2">
+          {ENGAGEMENTS.map((item) => (
             <FadeIn key={`${item.sector}-${item.focus}`}>
               <Card className="h-full">
-                <p className="text-xs tracking-[0.18em] text-gold uppercase">
-                  {item.sector}
-                </p>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-xs tracking-[0.18em] text-gold uppercase">
+                    {item.sector}
+                  </p>
+                  <span className="shrink-0 text-xs tracking-[0.14em] text-gold-muted uppercase dark:text-gold">
+                    {item.status}
+                  </span>
+                </div>
                 <h3 className="mt-3 text-lg font-semibold text-navy dark:text-white">
                   {item.focus}
                 </h3>
@@ -232,9 +237,9 @@ export function HomeSections() {
       {/* Network */}
       <Section
         id="network"
-        eyebrow="Our network"
-        title="Relationships across Venezuela’s private sector"
-        description="Grupos Caceres has cultivated extensive relationships with companies and professionals across key industries. We do not claim to work with every institution, nor do we purport to officially represent every organization in these sectors. What we offer is selective access—through trusted relationships—to the right partners and opportunities."
+        eyebrow="Counterpart access"
+        title="Selective relationships across key sectors"
+        description="Grupos Caceres develops introductions through working relationships in priority industries. We do not claim a massive institutional network or official representation of every organization in these sectors. Introductions are selective and based on fit."
       >
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <FadeIn>
@@ -281,7 +286,7 @@ export function HomeSections() {
         tone="muted"
         eyebrow="Investment"
         title="Local knowledge for capital decisions"
-        description="Investors evaluating Venezuela can rely on Grupos Caceres to identify opportunities, support local due diligence, structure partnerships, and aid execution. We advise—we do not claim ownership of mines, energy assets, or other underlying investments."
+        description="Investors evaluating Venezuela can work with Grupos Caceres to identify opportunities, support local due diligence, structure partnerships, and aid execution. We advise—we do not claim ownership of mines, energy assets, or other underlying investments."
       >
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {INVESTMENT_THEMES.map((item) => (
